@@ -4,15 +4,9 @@ import { Typography, Select } from "antd";
 const { Title } = Typography;
 const { Option } = Select;
 
-// Title segment container
-export default function TitleSegment({
-    svgTitle,
-    svgNameList,
-    changeCurrentSVG,
-}) {
-    // Contains the structure for the top section of the project
-
-    // Returns a JSX component for the title segment
+// title segment container
+export default function TitleSegment({svgTitle,svgNameList,changeCurrentSVG,}) {
+    // return component for title segment
     return (
         <>
             <Title>SVG from a Decentralized Database Viewer</Title>
