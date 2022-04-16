@@ -1,3 +1,5 @@
+//Inside svg-ddb-viewer/src/components
+
 import React from "react";
 
 // Viewer segment container
@@ -9,7 +11,8 @@ export default function Viewer({ svgData }) {
             <img
                 src={`data:image/svg+xml;utf8,${encodeURIComponent(svgData)}`}
                 alt="SVG currently being displayed"
-                style={{maxWidth: 420,}} // limit SVG expansion
+                style={{maxWidth: 420,}}
+                //Limit ourselves
             />
         </>
     );

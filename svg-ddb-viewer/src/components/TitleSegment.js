@@ -1,3 +1,5 @@
+//Inside svg-ddb-viewer/src/components
+
 // Imports
 import React from "react";
 import { Typography, Select } from "antd";

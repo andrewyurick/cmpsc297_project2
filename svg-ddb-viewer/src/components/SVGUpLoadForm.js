@@ -1,3 +1,5 @@
+//Inside svg-ddb-viewer/src/components
+
 // Imports
 import React from "react";
 import { Form, Input, Button } from "antd";
@@ -25,11 +27,11 @@ export default function SVGUploadForm({ updateSVG }) {
             alert(`${newSVG.title} is not a valid SVG.`);
         }
 
-        // clear form 
+        //Reset 
         form.resetFields();
     };
 
-    // error alert for invalid SVG
+    //Error condition
     const onFinishFailed = (errorInfo) => {
         console.log("Failed SVG input:", errorInfo);
     };

@@ -1,7 +1,10 @@
+//Inside svg-ddb-viewer/src
+
 // Imports
 import React, { useState } from "react";
 import { Divider } from "antd";
 import GUN from "gun";
+
 // Components
 import TitleSegment from "./components/TitleSegment";
 import Viewer from "./components/Viewer";
@@ -16,7 +19,7 @@ export default function App() {
     const [svg, setSVG] = useState({
         // default state
         title: "Ethereum Logo",
-        // Ethereum Logo
+        // Ethereum Logo given in project 
         svg: `
             <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 784.37 1277.39" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
                 <g id="Layer_x0020_1">
@@ -35,7 +38,7 @@ export default function App() {
             </svg>`,
     });
 
-    // list of default SVGs
+    
     const [svgNameList, setSVGNameList] = useState([
         
         "Ethereum Logo",
@@ -49,7 +52,7 @@ export default function App() {
             svg: svg.svg,
         });
 
-        // get new SVG from GUN and update
+        // get SVG from GUN and update
         gun.get(selectionTitle).on((data, key) => {
             setSVG({
                 title: data.title,
@@ -58,18 +61,18 @@ export default function App() {
         });
     };
 
-    // callback func to update the SVG within a child component
+    // update with newSVG
     const updateSVG = (newSVG) => {
-        // Update the GUN database with the new SVG
+        // Update GUN database with the new SVG
         gun.get(newSVG.title).put({
             title: newSVG.title,
             svg: newSVG.svg,
         });
-        // update the SVG list
+        // update SVG list
         setSVGNameList(svgNameList.concat(newSVG.title));
     };
 
-    // return component for general application
+    // return general application
     return (
         <div
             style={{
